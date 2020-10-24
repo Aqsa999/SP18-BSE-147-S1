@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Arial, Utkal, sans-serif;
+}
+
+.container
+{
+	max-width:1200px;
+	margin:0 auto;
+}
+
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#navigationbar {
+    background-color: rgb(0, 0, 0);
+    height:50px;
+    z-index: 1000;
+	padding: 19px 0px 0px 0px;
+}
+
+#navigationbar a {
+	padding: 1px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight:bold;
+    color: #f2f2f2;
+    text-align: center; 
+}
+
+.menuItem
+{
+	float:right;
+    width:90%;
+    height:19px;    
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.fixed + .content {
+    padding-top: 60px;
+}
+
+.divBox{
+    display:inline-block;
+	margin-top: 40px;
+    max-width:370px;
+    margin-right:19px;
+}
+
+.divBox-small{
+	margin-right:19px;
+    max-width:370px;
+    display:inline-block;    
+}
+
+.divBox2{
+    display:inline-block;
+	margin-top: 10px;
+    max-width:192px;
+    margin-right:19px;    
+}
+
+.divBox-small2{
+	margin-right:19px;
+    max-width:192px;
+    display:inline-block;    
+}
+
+.divBox3{
+    display:inline-block;
+	margin-top: 10px;
+    max-width:350px;
+	background-color:cornsilk;
+}
+
+.divBox-small3{	
+    max-width:350px;
+    display:inline-block;
+}
+
+.divBox4{
+    display:inline-block;
+	margin-top: 25px;
+    max-width:500px;
+    margin-right:19px;
+}
+
+.divBox-small4{
+	margin-right:19px;
+    max-width:500px;
+    display:inline-block;    
+}
+
+.divBox5{
+    display:inline-block;
+	margin-top: 10px;
+    max-width:300px;
+    margin-right:19px;
+	background-color: floralwhite;
+}
+
+.divBox-small5{
+	margin-right:19px;
+    max-width:300px;
+    display:inline-block;    
+}
+
+.container2 {
+  position: relative;
+}
+
+.bottomright2 {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 19px;
+  color: #f1f1f1;
+}
+
+.bottom {
+  position:inherit;
+  bottom: 32px;
+  font-size: 24px;
+  color:aliceblue;
+  background: rgba(0, 0, 0, 0.4);
+  font-family: roboto condensed,sans-serif,helvetica,arial;
+  font-weight: 300;
+}
+
+.bottom2 {
+  position:inherit;
+  bottom: 20px;
+  font-size: 17px;
+  color:aliceblue;
+  background: rgba(0, 0, 0, 0.4);
+  font-family: roboto condensed,sans-serif,helvetica,arial;
+  font-weight: 300;
+}
+
+.bottom3 {
+  position:relative;
+  bottom: 100px;
+  font-size: 24px;
+  text-align: center;
+  color:aliceblue;
+  background: rgba(0, 0, 0, 0.4);
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight:bolder;
+}
+
+.bottom4 {
+  position:relative;
+  bottom: 92px;
+  font-size: 20px;
+  color:aliceblue;
+  font-family: roboto condensed,sans-serif,helvetica,arial;
+  font-weight: bold;
+}
+
+.divBox-video{
+	margin-right:19px;
+    max-width:775px;
+    display:inline-block;    
+}
+
+.divBox-image{
+    display:inline-block;
+    margin-right:19px;
+    max-width:375px;
+}
+
+.divBox-image img{
+    width:370px;
+    height: auto;
+}
+
+.divBox-image h1{
+	padding: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    background: rgba(0,0,0,.3);
+    position: absolute;
+    top: 345px;
+    width: 350px;
+}
+
+.divBox img
+{
+    max-width:370px;
+}
+
+.divBox h3
+{
+    max-width:370px;
+}
+
+.divBox p
+{
+    line-height:1.7;
+}
+
+.divBox-footer div a{
+    color:#ffffff;
+}
+
+.bar2  {
+    text-align:center;    
+    padding: 10px 16px;
+    word-spacing: 7px;
+    font-size: 12px;
+    color: #f1e0e0;
+}
+
+.footer
+{
+    width:100%;
+    background:#000;
+    text-align:center;
+}
+
+.divBox-footer{
+	width:370px;
+    color:#999999;
+    line-height:2;
+    display:inline-block;
+    margin-right:12px;
+   text-align: start;
+}
+
+.divBox-footer table th{
+    font-size:19px;
+	color: rgb(255, 255, 255);
+	text-align: start;
+}
+
+.button {
+  display: inline-block;
+  font-size: 17px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline:white;
+  color: #fff;
+  background-color: #09c0b1;
+  border:2px 2px 2px 2px  white;
+  border-radius: 5px;
+  width: 227px;
+  height: 40px;
+}
+
+.button:hover {background-color: #096868}
+
+.button:active {
+  background-color: #06756c;
+  transform: translateY(4px);
+}
+
+.button2 {
+  display: inline-block;
+  font-size: 27px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline:white;
+  color: #fff;
+  background-color: #155181;
+  border:2px 2px 2px 2px  white;
+  border-radius: 5px;
+  width: 192px;
+  height: 70px;
+  font-weight: bolder;
+}
+
+.button2:hover {background-color: #096868}
+
+.button2:active {
+  background-color: #06756c;
+  transform: translateY(4px);
+}
+
+</style>
+</head>
+<body style="background-color:black;">
+<div id="navigationbar">
+	<div class="container">
+	  <img width="70px" height="40px" src="https://www.whatproswear.com/wp-content/uploads/2018/10/wpw-logo-sm.png"/>
+	  <div class="menuItem">
+		<a style="font-family: roboto,Arial,Helvetica,sans-serif; font-size: 20px;  font-weight:normal; "  href="#">WHAT PROS WEAR</a>
+		<a style="font-family: roboto,Arial,Helvetica,sans-serif; font-size: 20px;  font-weight:normal; "  href="#">GEAR</a>
+		<a style="font-family: roboto,Arial,Helvetica,sans-serif; font-size: 20px;  font-weight:normal; "  href="#">LOCKERS</a>
+		<a style="font-family: roboto,Arial,Helvetica,sans-serif; font-size: 20px;  font-weight:normal; "  href="#">NEWS</a>
+		<a style="font-family: roboto,Arial,Helvetica,sans-serif; font-size: 20px;  font-weight:normal; "  href="#">MOMENTS</a>
+		<a style="font-family: roboto,Arial,Helvetica,sans-serif; font-size: 20px;  font-weight:normal; "  href="#">CONTACT</a>
+		<a style="font-family: roboto,Arial,Helvetica,sans-serif; font-size: 20px;  font-weight:normal; "  href="#">ABOUT</a>
+		<a style="float:right;margin-top:-37px;" href="#"><img width="auto" height="auto" src="1.PNG" /></a>
+	  </div>
+	</div>
+</div>
+
+<div class="flex-container" >
+	<div class="container2" style="padding: 20px;margin-left: 20px;">
+			<img width = "800" height = "500" src="2.jpg">
+			</img>
+			<div  class="bottom">Top 6 Most Wanted from the World Series</div>
+	</div>
+	<div class="divBox">
+		<div class="container2">
+			<img width = "350px" height="220px" src="3.jpg">
+			<div  class="bottom2">MLB-Owned Rawlings to Acquire Easton</div>
+			<div class="divBox-small2">
+				<iframe width="350px" height="200px" style="margin-top: 34px;" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0">
+				</iframe>
+				<h3>New studies bring</h3>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="flex-container" >
+	<div class="container2"style="padding-left: 100px;">
+		<h1 style="text-align:left; color: #f1f1f1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 50px;">GEAR</h1>
+	</div>
+		<div class="container2" style="padding-left: 725px;">
+			<h1 style="text-align:right; color: #f1f1f1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 50px;">SEE ALL</h1>
+	</div>
+</div>
+
+<div class="flex-container" style="padding-left: 100px;">
+
+	<div class="divBox2" style="padding-right: 60px;">
+		<div class="divBox-small2">
+			<img width="227" height="240" src="a.jpeg">
+			</img>
+				<h3 style="color: #ffffff;">LeBron James’ Nike LeBron 18 Shoes</h3>
+				<button class="button">SHOP</button>
+		</div>
+		<div class="divBox-small2" style="padding-top: 20px;">
+			<img width="227" height="240" src="b.jpg">
+			</img>
+				<h3 style="color: #ffffff;">Kobe Bryant’s adidas EQT Top Ten 2000 Shoes</h3>
+				<button class="button">SHOP</button>
+		</div>
+	</div>
+	<div class="divBox2" style="padding-right: 60px;">
+		<div class="divBox-small2">
+			<img width="227" height="240" src="c.jpg">
+			</img>
+				<h3 style="color: #ffffff;">LeBron James’ Nike LeBron 18 Shoes</h3>
+				<button class="button">SHOP</button>
+		</div>
+		<div class="divBox-small2" style="padding-top: 20px;">
+			<img width="227" height="240" src="a.jpeg">
+			</img>
+				<h3 style="color: #ffffff;">Kobe Bryant’s adidas EQT Top Ten 2000 Shoes</h3>
+				<button class="button">SHOP</button>
+		</div>
+	</div>
+	<div class="divBox2" style="padding-right: 60px;">
+		<div class="divBox-small2">
+			<img width="227" height="240" src="d.jpg">
+			</img>
+				<h3 style="color: #ffffff;">LeBron James’ Nike LeBron 18 Shoes</h3>
+				<button class="button">SHOP</button>
+		</div>
+		<div class="divBox-small2" style="padding-top: 20px;" style="padding-right: 50px;">
+			<img width="227" height="240" src="e.jpg">
+			</img>
+				<h3 style="color: #ffffff;">Kobe Bryant’s adidas EQT Top Ten 2000 Shoes</h3>
+				<button class="button">SHOP</button>
+		</div>
+	</div>
+	<div class="divBox2">
+		<div class="divBox-small2">
+			<img width="227" height="240" src="f.jpg">
+			</img>
+				<h3 style="color: #ffffff;">LeBron James’ Nike LeBron 18 Shoes</h3>
+				<button class="button">SHOP</button>
+		</div>
+		<div class="divBox-small2" style="padding-top: 20px;">
+			<img width="227" height="240" src="g.jpg">
+			</img>
+				<h3 style="color: #ffffff;">Kobe Bryant’s adidas EQT Top Ten 2000 Shoes</h3>
+				<button class="button">SHOP</button>
+		</div>
+	</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="flex-container" >
+		<div class="container2"style="padding-left: 100px;">
+			<h1 style="text-align:left; color: #f1f1f1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 50px;">LOCKERS</h1>
+		</div>
+			<div class="container2" style="padding-left: 650px;">
+				<h1 style="text-align:right; color: #f1f1f1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 50px;">SEE ALL</h1>
+		</div>
+	</div>
+	<div class="flex-container" style="padding-left: 100px;">
+		<div class="divBox2" style="padding-right: 60px;">
+			<div class="divBox-small2">
+				<img width="227" height="140" src="11.PNG">
+				</img>
+				<div  class="bottom3">LEBRON JAMES</div>
+			</div>
+			<div class="divBox-small2" style="padding-top: 20px;">
+				<img width="227" height="140" src="22.PNG">
+				</img>
+				<div  class="bottom3">ZI WILLIMSON</div>
+			</div>
+		</div>
+			<div class="divBox2" style="padding-right: 60px;">
+				<div class="divBox-small2">
+					<img width="227" height="140" src="33.PNG">
+					</img>
+					<div  class="bottom3">LEBRON JAMES</div>
+				</div>
+				<div class="divBox-small2" style="padding-top: 20px;">
+					<img width="227" height="140" src="22.PNG">
+					</img>
+					<div  class="bottom3">ZION WILLIMSON</div>
+				</div>
+			</div>
+				<div class="divBox2" style="padding-right: 60px;">
+					<div class="divBox-small2">
+						<img width="227" height="140" src="44.PNG">
+						</img>
+						<div  class="bottom3">LEBRON JAMES</div>
+					</div>
+					<div class="divBox-small2" style="padding-top: 20px;">
+						<img width="227" height="140" src="55.PNG">
+						</img>
+						<div  class="bottom3">ZION WILLIMSON</div>
+					</div>
+				</div>
+					<div class="divBox2" style="padding-right: 60px;">
+						<div class="divBox-small2">
+							<img width="227" height="140" src="66.PNG">
+							</img>
+							<div  class="bottom3">LEBRON JAMES</div>
+						</div>
+						<div class="divBox-small2" style="padding-top: 20px;">
+							<img width="227" height="140" src="77.PNG">
+							</img>
+							<div  class="bottom3">ZION WILLIMSON</div>
+						</div>
+		</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="flex-container" >
+			<div class="container2"style="padding-left: 100px;">
+				<h1 style="text-align:left; color: #f1f1f1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 50px;">MOMENTS</h1>
+			</div>
+				<div class="container2" style="padding-left: 592px;">
+					<h1 style="text-align:right; color: #f1f1f1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 50px;">SEE ALL</h1>	
+			</div>
+		</div>
+		<div class="flex-container" style="padding-left: 100px;">
+			<div class="divBox2" style="padding-right: 160px;">
+				<div class="divBox-small2">
+					<img width="325" height="492" src="111.jpg">
+					</img>
+					<div  class="bottom4" style = "width:325px">LeBron James Wins Championship Number 4 in the Nike LeBron 18 Shoes</div>
+				</div>
+				<div class="divBox-small2">
+					<img width="325" height="492" src="222.jpg">
+					</img>
+					<div  class="bottom4" style = "width:325px">LeBron James Wins Championship Number 4 in the Nike LeBron 18 Shoes</div>
+				</div>
+			</div>
+			<div class="divBox2" style="padding-right: 160px;">
+				<div class="divBox-small2">
+					<img width="325" height="492" src="333.jpeg">
+					</img>
+					<div  class="bottom4" style = "width:325px">LeBron James Wins Championship Number 4 in the Nike LeBron 18 Shoes</div>
+				</div>
+				<div class="divBox-small2">
+					<img width="325" height="492" src="444.jpg">
+					</img>
+					<div  class="bottom4" style = "width:325px">LeBron James Wins Championship Number 4 in the Nike LeBron 18 Shoes</div>
+				</div>
+			</div>
+			<div class="divBox2" style="padding-right: 60px;">
+				<div class="divBox-small2">
+					<img width="325" height="492" src="555.jpeg">
+					</img>
+					<div  class="bottom4" style = "width:325px">LeBron James Wins Championship Number 4 in the Nike LeBron 18 Shoes</div>
+				</div>
+				<div class="divBox-small2">
+					<img width="325" height="492" src="666.jpeg">
+					</img>
+					<div  class="bottom4" style = "width:325px">LeBron James Wins Championship Number 4 in the Nike LeBron 18 Shoes</div>
+				</div>
+			</div>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<div class="flex-container" >
+				<div class="container2"style="padding-left: 100px;">
+					<h1 style="text-align:left; color: #f1f1f1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 50px;">NEWS</h1>
+				</div>
+					<div class="container2" style="padding-left: 700px;">
+						<h1 style="text-align:right; color: #f1f1f1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 50px;">SEE ALL</h1>	
+				</div>
+			</div>
+			<div class="flex-container" style="padding-left: 100px;">
+				<div class="divBox2" style="padding-right: 160px;">
+					<div class="divBox-small2">
+						<img width="325" height="492" src="777.jpg">
+						</img>
+						<div  class="bottom4" style = "width:325px">NIGHTLY PRO NOTABLES: The Lakers Blow Out Miami for Championship Number 17 🏆 – October 11, 2020</div>
+					</div>
+					<div class="divBox-small2">
+						<img width="325" height="492" src="888.png">
+						</img>
+						<div  class="bottom4" style = "width:325px">Travis d’Arnaud Takes 97 Off the Face and Doesn’t Flinch | Force3 Defender Mask Stars in NLCS</div>
+					</div>
+				</div>
+				<div class="divBox2" style="padding-right: 160px;">
+					<div class="divBox-small2">
+						<img width="325" height="492" src="999.jpeg">
+						</img>
+						<div  class="bottom4" style = "width:325px">NIGHTLY PRO NOTABLES: The Lakers Blow Out Miami for Championship Number 17 🏆 – October 11, 2020</div>
+					</div>
+					<div class="divBox-small2">
+						<img width="325" height="492" src="10.jpg">
+						</img>
+						<div  class="bottom4" style = "width:325px">LeBron James Wins Championship Number 4 in the Nike LeBron 18 Shoes</div>
+					</div>
+				</div>
+				<div class="divBox2" style="padding-right: 60px;">
+					<div class="divBox-small2">
+						<img width="325" height="492" src="11.jpg">
+						</img>
+						<div  class="bottom4" style = "width:325px">NIGHTLY PRO NOTABLES: The Lakers Blow Out Miami for Championship Number 17 🏆 – October 11, 2020</div>
+					</div>
+					<div class="divBox-small2">
+						<img width="325" height="492" src="12.jpg">
+						</img>
+						<div  class="bottom4" style = "width:325px">LeBron James Wins Championship Number 4 in the Nike LeBron 18 Shoes</div>
+					</div>
+				</div>
+				</div>
+<div style="padding-left: 550px;"><button class="button2">LOAD MORE</button></div>
+	<div class="footer">
+		<div class="container">
+		<br><br>
+		<hr style="height:2px;border-top:2px solid #aaa;margin-top:30px;margin-bottom:0px;padding:0;">
+		<br><br>
+		<div style="text-align: start;"><h1 style="color: honeydew; padding-left: 19px;">Most Popular</h1></div>
+			<div class="divBox-footer">
+				<table>
+					<th><b>Gear</b></th>
+					<br>
+					<tr><td>Fernando Tatis Jr.'s 100% S2 Sunglasses</td></tr>
+					<tr><td>Walker Buehler's Nike Glove (2019 PE)</td></tr>
+					<tr><td>Corey Seager’s Marucci CS5 Maple Bat</td></tr>
+					<tr><td>Cody Bellinger’s Louisville Slugger C243 Maple Bat</td></tr>
+					<tr><td>Luka Doncic's Jordan React Elevation Shoes</td></tr>
+					<tr><td>Mookie Betts’ Jordan IX (9) Cleats</td></tr>
+					<tr><td>Mookie Betts' Victus Axe MB50 Maple Bat</td></tr>
+					<tr><td>Mookie Betts' Wilson A2K Superskin MB50 Glove (2020)</td></tr>
+					<tr><td>Yadier Molina’s Jordan Catchers Gear (Chest Protector, Shin Guards)</td></tr>
+					<tr><td>Fernando Tatis Jr.'s 100% HYPERCRAFT Sunglasses</td></tr>
+				</table>
+			</div>
+			<div class="divBox-footer">
+				<table>
+					<th><b>Lockers</b></th>
+					<br>
+					<tr><td>Clayton Kershaw</td></tr>
+					<tr><td>Adrian Beltre</td></tr>
+					<tr><td>Mookie Betts</td></tr>
+					<tr><td>Fernando Tatis Jr.</td></tr>
+					<tr><td>India</td></tr>
+					<tr><td>Cody Bellinger</td></tr>
+					<tr><td>Yadier Molina</td></tr>
+					<tr><td>Cody Bellinger</td></tr>
+					<tr><td>Cody Bellinger</td></tr>
+					<tr><td>Luka Doncic</td></tr>
+				</table>
+			</div>
+			<div class="divBox-footer">
+				<table>
+					<th><b>Moments</b></th>
+					<br>
+					<tr><td>Deivi Garcia Baffles Mets in Rawlings Blacked Out Glove</td></tr>
+					<tr><td>Walker Buehler's Nike Glove (2019 PE)</td></tr>
+					<tr><td>Donovan Mitchell Sets Playoff Record 57-Points in the adidas D.O.N. Issue #2 Shoes</td></tr>
+					<tr><td>Deivi Garcia Baffles Mets in Rawlings Blacked Out Glove</td></tr>
+					<tr><td>Luka Doncic's Jordan React Elevation Shoes</td></tr>
+					<tr><td>Donovan Mitchell Sets Playoff Record 57-Points in the adidas D.O.N. Issue #2 Shoes</td></tr>
+					<tr><td>Mookie Betts' Victus Axe MB50 Maple Bat</td></tr>
+					<tr><td>Mookie Betts' Wilson A2K Superskin MB50 Glove (2020)</td></tr>
+					<tr><td>Yadier Molina’s Jordan Catchers Gear (Chest Protector, Shin Guards)</td></tr>
+					<tr><td>Donovan Mitchell Sets Playoff Record 57-Points in the adidas D.O.N. Issue #2 Shoes</td></tr>
+				</table>
+			</div>
+				</table>
+			</div>
+		<br>
+		<br>
+		<br>
+		</div>
+	<div class="footer"></div>
+		<div class="container">
+		<br><br>
+			<div class="divBox-footer">
+				<table>
+					<th><b>News</b></th>
+					<br>
+					<tr><td>MIMSBANDZ: The Portrait Wristbands Worn by 90s Legends (Bonds, Strawberry, Ozzie, Griffey...) ARE BACK</td></tr>
+					<tr><td>Walker Buehler's Nike Glove (2019 PE)</td></tr>
+					<tr><td>Corey Seager’s Marucci CS5 Maple Bat</td></tr>
+					<tr><td>Cody Bellinger’s Louisville Slugger C243 Maple Bat</td></tr>
+					<tr><td>MIMSBANDZ: The Portrait Wristbands Worn by 90s Legends (Bonds, Strawberry, Ozzie, Griffey...) ARE BACK</td></tr>
+					<tr><td>Travis d'Arnaud Takes 97 Off the Face and Doesn't Flinch | Force3 Defender Mask Stars in NLCS</td></tr>
+					<tr><td>Mookie Betts' Victus Axe MB50 Maple Bat</td></tr>
+					<tr><td>Mookie Betts' Wilson A2K Superskin MB50 Glove (2020)</td></tr>
+					<tr><td>Yadier Molina’s Jordan Catchers Gear (Chest Protector, Shin Guards)</td></tr>
+					<tr><td>Travis d'Arnaud Takes 97 Off the Face and Doesn't Flinch | Force3 Defender Mask Stars in NLCS</td></tr>
+				</table>
+			</div>
+			<div class="divBox-footer">
+				<table>
+					<th><b>Teams</b></th>
+					<br>
+					<tr><td>San Diego Padres</td></tr>
+					<tr><td>Los Angeles Dodgers</td></tr>
+					<tr><td>Mookie Betts</td></tr>
+					<tr><td>Fernando Tatis Jr.</td></tr>
+					<tr><td>Los Angeles Dodgers</td></tr>
+					<tr><td>Cody Bellinger</td></tr>
+					<tr><td>Yadier Molina</td></tr>
+					<tr><td>Cody Bellinger</td></tr>
+					<tr><td>Los Angeles Lakers</td></tr>
+					<tr><td>Luka Doncic</td></tr>
+				</table>
+			</div>
+			<div class="divBox-footer">
+				<table>
+					<th><b>Follow What Pros Wear</b></th>
+					<br>
+					<tr><td>
+					<div id="navigationbar3"></div>
+						<div style="border: 2px solid #f1e0e0;">
+							<a style="float:right;margin-top:100px;margin-bottom: 100px; padding: 0%;border: 2px solid #f1e0e0;" href="#"><img width="auto" height="40px" src="https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19759.png" /></a>
+							<a style="float:right;margin-top:100px;margin-bottom: 100px; padding: 0%;border: 2px solid #f1e0e0;" href="#"><img width="auto" height="40px" src="https://www.freepnglogos.com/uploads/instagram-logos-png-images-free-download-2.png" /></a>
+							<a style="float:right;margin-top:100px;margin-bottom: 100px; padding: 0%;border: 2px solid #f1e0e0;" href="#"><img width="auto" height="40px" src="https://pngimg.com/uploads/twitter/twitter_PNG9.png" /></a>
+							<a style="float:right;margin-top:100px;margin-bottom: 100px; padding: 0%;border: 2px solid #f1e0e0;" href="#"><img width="auto" height="40px" src="https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c543.png" /></a>
+						</div>
+					</div>
+				</td></tr>
+					<tr><td>Affiliate Disclosure</td></tr>
+					<tr><td>Privacy Policy</td></tr>
+					<tr><td>Terms & Conditions</td></tr>
+				</table>
+				</table>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<div style="color: #f2f2f2; text-align: center;">
+				<a >© 2020 WHAT PROS WEAR. All Rights reserved. For questions and corrections, please Contact Us. View our Privacy Policy.
+				</a>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+<script>
+window.onscroll = function() {myFunction()};
+var navigationbar = document.getElementById("navigationbar");
+var fixed = navigationbar.offsetTop;
+function myFunction() 
+{
+  if (window.pageYOffset >= fixed) {
+    navigationbar.classList.add("fixed")
+  } 
+  else {
+    navigationbar.classList.remove("fixed");
+  }
+}
+</script>
+</body>
+</html>
